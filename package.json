@@ -5,15 +5,14 @@
   "main": "./src/background.js",
   "scripts": {
     "start": "electron ./src/background.js",
-    "pack": "electron-builder ./src/background.js",
+    "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
   "build": {
     "appId": "com.mazon.whatsapp",
     "linux": {
-      "category": "social",
-      "icon": "build/icon.png",
-      "target": ["deb"]
+      "icon": "./src/assets/icons/512x512.png",
+      "target": [ "deb", "appimage" ]
     }
   },
   "keywords": [],
