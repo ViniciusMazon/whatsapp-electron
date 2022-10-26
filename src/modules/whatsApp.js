@@ -3,8 +3,8 @@ const path = require('path')
 
 function createWindow () {
   win = new BrowserWindow({
-    width: 800, 
-    height: 600,
+    width: 1400, 
+    height: 900,
     icon: path.join(__dirname, '../../assets/icons/512x512.png'),
     webPreferences: { 
       preload: path.join(__dirname, 'preload.js')
@@ -19,6 +19,7 @@ function createWindow () {
   win.webContents.on('new-window', (event, url) => {
     shell.openExternal(url);
     event.preventDefault();
+    console.log(document.title())
   });
   
   win.setMenuBarVisibility(false);
